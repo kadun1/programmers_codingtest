@@ -10,27 +10,23 @@ public class P03Stack {
 
     static int[] solution(int[] progresses, int[] speeds){
 
-        int[] test = new int[progresses.length];
-
-        for (int i = 0; i < progresses.length; i++) {
-            test[i] = (100 - progresses[i]) / speeds[i];
-        }
-
         ArrayList<Integer> list = new ArrayList<>();
-        int index = 0;
-        for (int i = 0; i < test.length;) {
-            for (int j = i+1; j < test.length; j++) {
-                int sum = 0;
-                sum += test[j];
-                if(test[i]>=sum){
-                    list.add(index, 1);
-                } else {
-                    index++;
-                    i = j;
-                    continue;
+        int tmpInt = returnInt(progresses[0], speeds[0]);
+        Stack<Integer> stack = new Stack<>();
+        int count = 0;
+        for (int i = 1; i < progresses.length; i++) {
+            int remain = returnInt(progresses[i], speeds[i]);
+            if(tmpInt>remain){
+                while (!stack.isEmpty()) {
+                    count++;
+                    stack.pop();
                 }
+
             }
         }
+
+
+
 
         for (Integer a: list
              ) {
@@ -38,5 +34,9 @@ public class P03Stack {
         }
 
         return list.stream().mapToInt(i -> i).toArray();
+    }
+
+    static int returnInt(int progress, int speed){
+        return (int)Math.ceil((100D - progress) / speed);
     }
 }
