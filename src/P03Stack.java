@@ -16,12 +16,16 @@ public class P03Stack {
         int count = 0;
         for (int i = 1; i < progresses.length; i++) {
             int remain = returnInt(progresses[i], speeds[i]);
-            if(tmpInt>remain){
+            stack.push(remain);
+            if(tmpInt<stack.peek()){
+                System.out.println("if내"+stack.peek());
                 while (!stack.isEmpty()) {
                     count++;
                     stack.pop();
                 }
-
+            } else {
+                stack.push(stack.peek() + remain);
+                System.out.println("if밖"+stack.peek());
             }
         }
 
