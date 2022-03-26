@@ -3,10 +3,11 @@ import java.util.*;
 public class MyTest {
     public static void main(String[] args) {
 
-        String[][] rounds = {{"b","a","a","d"},{"b","c","a","c"},{"b","a","d","c"}};
 
-        int sol = solution(rounds);
-        System.out.println(sol);
+        Optional<String[]> opt = Optional.ofNullable(new String[]{"a","b","c"});
+        Arrays.stream(opt.get()).map(String::toUpperCase);
+//        solution(rounds);
+
     }
 
     static int solution(String[][] rounds){

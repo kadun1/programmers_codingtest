@@ -11,13 +11,13 @@ public class P03Stack {
     static int[] solution(int[] progresses, int[] speeds){
 
         ArrayList<Integer> list = new ArrayList<>();
-        int tmpInt = returnInt(progresses[0], speeds[0]);
+        int product = returnInt(progresses[0], speeds[0]);
         Stack<Integer> stack = new Stack<>();
         int count = 0;
         for (int i = 1; i < progresses.length; i++) {
             int remain = returnInt(progresses[i], speeds[i]);
             stack.push(remain);
-            if(tmpInt<stack.peek()){
+            if(product<stack.peek()){
                 System.out.println("if내"+stack.peek());
                 while (!stack.isEmpty()) {
                     count++;
@@ -37,6 +37,7 @@ public class P03Stack {
             System.out.println("a = " + a);
         }
 
+        System.out.println(count);
         return list.stream().mapToInt(i -> i).toArray();
     }
 
