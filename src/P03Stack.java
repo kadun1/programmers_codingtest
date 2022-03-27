@@ -2,8 +2,8 @@ import java.util.*;
 
 public class P03Stack {
     public static void main(String[] args) {
-        int[] pro = {20, 99, 93, 30, 55, 10};
-        int[] spe = {5, 10, 1, 1, 30, 5};
+        int[] pro = {95, 90, 99, 99, 80, 99};
+        int[] spe = {1, 1, 1, 1, 1, 1};
         solution(pro, spe);
 
     }
@@ -13,31 +13,31 @@ public class P03Stack {
         ArrayList<Integer> list = new ArrayList<>();
         int product = returnInt(progresses[0], speeds[0]);
         Stack<Integer> stack = new Stack<>();
+        stack.push(product);
         int count = 0;
         for (int i = 1; i < progresses.length; i++) {
             int remain = returnInt(progresses[i], speeds[i]);
-            stack.push(remain);
-            if(product<stack.peek()){
-                System.out.println("if내"+stack.peek());
+            if(product<remain){
+                count = 0;
                 while (!stack.isEmpty()) {
                     count++;
                     stack.pop();
                 }
-            } else {
-                stack.push(stack.peek() + remain);
-                System.out.println("if밖"+stack.peek());
+                product = remain;
+                list.add(count);
             }
+            stack.push(remain);
         }
 
-
-
-
-        for (Integer a: list
-             ) {
-            System.out.println("a = " + a);
+        if (!stack.isEmpty()) {
+            count = 0;
+            while (!stack.isEmpty()) {
+                count++;
+                stack.pop();
+            }
+            list.add(count);
         }
 
-        System.out.println(count);
         return list.stream().mapToInt(i -> i).toArray();
     }
 
