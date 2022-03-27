@@ -1,8 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.*;
 
 public class P04Heap {
     public static void main(String[] args) {
@@ -13,9 +9,28 @@ public class P04Heap {
 
     static int solution(int[] scoville, int k){
         int answer = 0;
+
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+
+        for (int i : scoville) {
+            priorityQueue.add(i);
+        }
+
+        while (priorityQueue.size() > 1 && priorityQueue.peek() < k) {
+            int sum =  priorityQueue.poll() + priorityQueue.poll() * 2;
+            priorityQueue.add(sum);
+            answer++;
+        }
+
+        if (priorityQueue.size() <= 1 && priorityQueue.peek() < k) {
+            answer = -1;
+        }
+
+/*
         Arrays.sort(scoville);
         List<Integer> list = new ArrayList<>();
         list = Arrays.stream(scoville).boxed().collect(Collectors.toList());
+
 
         while (list.get(0)<k){
             if(list.get(1)<k){
@@ -26,9 +41,7 @@ public class P04Heap {
                 answer++;
             }
         }
-
-//        list.forEach(i-> System.out.println("리스트 = " + i));
-
+*/
         return answer;
     }
 }
