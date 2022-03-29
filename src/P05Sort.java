@@ -20,11 +20,6 @@ public class P05Sort {
             }
         };
 
-        String a = "30";
-        String b = "3";
-        if(a.hashCode()>b.hashCode()){
-            System.out.println(a.hashCode());
-        }
 
         stringComparator.compare(answer, answer);
 
