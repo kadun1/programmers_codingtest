@@ -20,7 +20,6 @@ public class P05Sort {
             }
         };
 
-
         stringComparator.compare(answer, answer);
 
 
