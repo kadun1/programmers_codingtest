@@ -3,6 +3,8 @@ import java.util.*;
 public class MyTest {
     public static void main(String[] args) {
 
+        String s = new String("123");
+        System.out.println("s = " + s);
 
         Optional<String[]> opt = Optional.ofNullable(new String[]{"a","b","c"});
         Arrays.stream(opt.get()).map(String::toUpperCase);

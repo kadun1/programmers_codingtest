@@ -22,7 +22,6 @@ public class P05Sort {
 
         stringComparator.compare(answer, answer);
 
-
         for (int i = 0; i < numbers.length; i++) {
             list.add(numbers[i]+"");
         }
