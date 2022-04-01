@@ -1,21 +1,19 @@
 public class P07Greedy {
 
     public static void main(String[] args) {
-        solution("JEROEN");
+        int answer = solution("JEROENZA");
+        System.out.println("answer = " + answer);
     }
 
     public static int solution(String name){
         int answer = 0;
+        int len = name.length();
 
-        char[] charArr = name.toCharArray();
+        for (int i = 0; i < name.length(); i++) {
+            answer += Math.min(name.charAt(i)-'A', 'Z'-name.charAt(i)+1);
 
-        for (char c: charArr
-             ) {
-            System.out.println(Character.getNumericValue(c));
+//            A의 갯수에 따라.. 되돌아가는 것이 빠를수 있음을 구현해야함
         }
-
-        System.out.println('z'-'b');
-
         return answer;
     }
 }
