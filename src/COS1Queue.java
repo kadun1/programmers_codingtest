@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.ArrayList;
 
-class Solution {
+class Solution1 {
     Integer func_a(ArrayList<Integer> stack) {
         Integer item = stack.remove(stack.size() - 1);
         return item;
@@ -28,7 +28,7 @@ class Solution {
 
     // 아래는 테스트케이스 출력을 해보기 위한 main 메소드입니다.    
     public static void main(String[] args) {
-        Solution sol = new Solution();
+        Solution1 sol = new Solution1();
 
         ArrayList<Integer> stack1_1 = new ArrayList<Integer>();
         ArrayList<Integer> stack2_1 = new ArrayList<Integer>();

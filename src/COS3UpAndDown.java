@@ -1,4 +1,4 @@
-class Solution1 {
+class Solution3 {
     public int solution(int K, int[] numbers, String[] UpDown) {
         int left = 1;
         int right = K;
@@ -16,7 +16,7 @@ class Solution1 {
 
     // 아래는 테스트케이스 출력을 해보기 위한 main 메소드입니다.
     public static void main(String[] args) {
-        Solution1 sol = new Solution1();
+        Solution3 sol = new Solution3();
         int K1 = 10;
         int[] numbers1 = {4, 9, 6};
         String[] UpDown1 = {new String("UP"), new String("DOWN"), new String("UP")};
