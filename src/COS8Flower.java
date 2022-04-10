@@ -18,25 +18,6 @@ class Solution8 {
     public int solution(int[][] garden) {
         // 여기에 코드를 작성해주세요.
         int answer = 0;
-        int x = 0;
-        int y = 0;
-
-        List<Flower> list = new ArrayList<>();
-        for (int i = 0; i < garden.length; i++) {
-            for (int j = 0; j < garden[0].length; j++) {
-                Flower flower = new Flower(i, j);
-                list.add(flower);
-            }
-        }
-
-
-        for (int i = 0; i < list.size(); i++) {
-
-        }
-
-
-
-
         return answer;
     }
 
@@ -47,13 +28,13 @@ class Solution8 {
         int ret1 = sol.solution(garden1);
 
         // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
-        System.out.println("solution 메소드의 반환 값은 " + ret1 + " 입니다.");
+        System.out.println("solution1 메소드의 반환 값은 " + ret1 + " 입니다.");
 
         int[][] garden2 = {{1, 1}, {1, 1}};
         int ret2 = sol.solution(garden2);
 
         // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
-        System.out.println("solution 메소드의 반환 값은 " + ret2 + " 입니다.");
+        System.out.println("solution2 메소드의 반환 값은 " + ret2 + " 입니다.");
 
     }
 }
