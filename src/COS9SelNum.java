@@ -10,7 +10,7 @@ class Solution9 {
 
         Arrays.sort(arr);
 
-        for (int i = 0; i < arr.length-K; i++) {
+        for (int i = 0; i <= arr.length-K; i++) {
             minus = arr[K-1+i] - arr[i];
             min = Math.min(min, minus);
         }
