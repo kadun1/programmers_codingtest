@@ -5,38 +5,35 @@ import java.util.List;
 
 class Solution8 {
 
-    class Flower {
-        int x;
-        int y;
-
-        public Flower(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-    }
-
     public int solution(int[][] garden) {
         // 여기에 코드를 작성해주세요.
         int answer = 0;
-        int x = 0;
-        int y = 0;
+        int[][] nGarden = new int[garden.length][garden[0].length];
+        boolean loop = true;
 
-        List<Flower> list = new ArrayList<>();
-        for (int i = 0; i < garden.length; i++) {
-            for (int j = 0; j < garden[0].length; j++) {
-                Flower flower = new Flower(i, j);
-                list.add(flower);
+        while (loop) {
+            loop = false;
+            for (int i = 0; i < garden.length; i++) {
+                for (int j = 0; j < garden[0].length; j++) {
+                    if(garden[i][j]==1){
+                        nGarden[i][j] = 1;
+                        if(i-1 >= 0 && garden[i-1][j]==0) nGarden[i-1][j] = 1;
+                        if(i+1 < garden.length && garden[i+1][j]==0) nGarden[i+1][j] = 1;
+                        if(j-1 >= 0 && garden[i][j-1]==0) nGarden[i][j-1] = 1;
+                        if(j+1 < garden.length && garden[i][j+1]==0) nGarden[i][j+1] = 1;
+                    } else {
+                        loop = true;
+                    }
+                }
+            }
+
+            if(loop){
+                answer++;
+                for (int i = 0; i < garden.length; i++) {
+                    System.arraycopy(nGarden[i],0 ,garden[i], 0, garden.length);
+                }
             }
         }
-
-
-        for (int i = 0; i < list.size(); i++) {
-
-        }
-
-
-
-
         return answer;
     }
 
