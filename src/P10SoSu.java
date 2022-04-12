@@ -9,16 +9,18 @@ public class P10SoSu {
     public static int solution(int n){
         int answer = 0;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 3; i <= n; i++) {
             int count = 0;
-            for (int j = 2; j <= Math.sqrt(i) ; j++) {
-                if (i % j == 0) {
-                    continue;
-                } else {
-                    count++;
+            if(i%2!=0){
+                for (int j = 2; j < i; j++) {
+                    if (i % j == 0) {
+                        continue;
+                    } else {
+                        count++;
+                    }
                 }
             }
-            if(count==1) answer++;
+            if(count==0) answer++;
         }
 
         return answer + 1;
