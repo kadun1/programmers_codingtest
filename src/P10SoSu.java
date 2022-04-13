@@ -1,7 +1,7 @@
 public class P10SoSu {
 
     public static void main(String[] args) {
-        int n = 5;
+        int n = 50000;
         int answer = solution(n);
         System.out.println(answer);
     }
@@ -14,15 +14,14 @@ public class P10SoSu {
             if(i%2!=0){
                 for (int j = 2; j < i; j++) {
                     if (i % j == 0) {
-                        continue;
-                    } else {
                         count++;
                     }
                 }
+            } else {
+                count++;
             }
             if(count==0) answer++;
         }
-
         return answer + 1;
     }
 }
