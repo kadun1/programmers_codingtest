@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class P10SoSu {
 
     public static void main(String[] args) {
@@ -9,19 +12,29 @@ public class P10SoSu {
     public static int solution(int n){
         int answer = 0;
 
-        for (int i = 3; i <= n; i++) {
-            int count = 0;
-            if(i%2!=0){
-                for (int j = 2; j < i; j++) {
-                    if (i % j == 0) {
-                        count++;
-                    }
-                }
-            } else {
-                count++;
-            }
-            if(count==0) answer++;
+        int[] arr = new int[n + 1];
+
+        for (int i = 0; i <= n; i++) {
+            arr[i]=i;
         }
-        return answer + 1;
+
+        arr[1] = 0;
+
+        for (int i = 2; i <= n; i++) {
+            if (arr[i]==0) continue;
+
+            //에라토스테네스의 체를 로직화함...
+            for (int j = i*2; j < arr.length; j+=i) {
+                arr[j]=0;
+            }
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i]!=0){
+                answer++;
+            }
+        }
+
+        return answer;
     }
 }
