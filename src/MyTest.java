@@ -3,13 +3,17 @@ import java.util.*;
 public class MyTest {
     public static void main(String[] args) {
 
-        String s = new String("123");
-        System.out.println("s = " + s);
+        int[] a = new int[8];
+        int i=0, n=10;
 
-        Optional<String[]> opt = Optional.ofNullable(new String[]{"a","b","c"});
-        Arrays.stream(opt.get()).map(String::toUpperCase);
-//        solution(rounds);
+        while (i < 8) {
+            a[i++] = n%2;
+            n /= 2;
+        }
 
+        for (int j = 7; j >= 0; j--) {
+            System.out.println(a[j]);
+        }
     }
 
     static int solution(String[][] rounds){
