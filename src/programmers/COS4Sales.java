@@ -1,3 +1,5 @@
+package programmers;
+
 class Solution4 {
     class Job {
         public int salary;

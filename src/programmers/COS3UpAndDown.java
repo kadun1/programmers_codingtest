@@ -1,3 +1,5 @@
+package programmers;
+
 class Solution3 {
     public int solution(int K, int[] numbers, String[] UpDown) {
         int left = 1;

@@ -1,7 +1,4 @@
-// 다음과 같이 import를 사용할 수 있습니다.
-
-import java.util.ArrayList;
-import java.util.List;
+package programmers;// 다음과 같이 import를 사용할 수 있습니다.
 
 class Solution8 {
 

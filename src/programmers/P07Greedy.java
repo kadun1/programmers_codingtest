@@ -1,3 +1,5 @@
+package programmers;
+
 public class P07Greedy {
 
     public static void main(String[] args) {

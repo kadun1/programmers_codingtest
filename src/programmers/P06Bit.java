@@ -1,3 +1,5 @@
+package programmers;
+
 public class P06Bit {
 
     public static void main(String[] args) {

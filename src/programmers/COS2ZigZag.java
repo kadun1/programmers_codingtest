@@ -1,3 +1,5 @@
+package programmers;
+
 class Solution2 {
     final int INC = 0;
     final int DEC = 1;

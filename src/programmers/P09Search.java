@@ -1,3 +1,5 @@
+package programmers;
+
 public class P09Search {
     public static void main(String[] args) {
         String numbers = "17";

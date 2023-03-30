@@ -1,3 +1,5 @@
+package programmers;
+
 class Solution6 {
     public int solution(int n, int mix, int k) {
         int answer = 0;

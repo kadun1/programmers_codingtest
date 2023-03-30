@@ -1,4 +1,5 @@
-import java.util.*;
+package programmers;
+
 import java.util.ArrayList;
 
 class Solution1 {
